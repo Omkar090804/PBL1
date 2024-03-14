@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Donation Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .container {
+            max-width: 300px;
+            margin: 50px auto;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        input[type="text"], input[type="password"], input[type="submit"], select {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 15px; /* Increased padding */
+            font-size: 16px; /* Increased font size */
+            box-sizing: border-box;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Temple Donation</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#history">History</a>
+    </nav>
+</header>
+
+<div class="container" id="selectionForm">
+    <h2>Select User Type</h2>
+    <select id="userTypeSelect">
+        <option value="user">User</option>
+        <option value="authority">Authority</option>
+    </select>
+    <button onclick="showSignupOrLogin()">Next</button>
+</div>
+
+<div class="container hidden" id="signupOrLoginForm">
+    <h2>Select Action</h2>
+    <select id="actionSelect">
+        <option value="signup">Signup</option>
+        <option value="login">Login</option>
+    </select>
+    <button onclick="showForm()">Next</button>
+</div>
+
+<div class="container hidden" id="formContainer">
+    <h2 id="formTitle"></h2>
+    <form id="form">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script>
+    function showSignupOrLogin() {
+        document.getElementById('selectionForm').classList.add('hidden');
+        document.getElementById('signupOrLoginForm').classList.remove('hidden');
+    }
+
+    function showForm() {
+        var userType = document.getElementById('userTypeSelect').value;
+        var action = document.getElementById('actionSelect').value;
+        var formTitle = action.charAt(0).toUpperCase() + action.slice(1) + ' ' + userType;
+        
+        document.getElementById('signupOrLoginForm').classList.add('hidden');
+        document.getElementById('formContainer').classList.remove('hidden');
+        document.getElementById('formTitle').innerText = formTitle;
+        document.getElementById('form').action = action + '.html'; // Modify this to actual action URLs
+    }
+</script>
+
+</body>
+</html>
