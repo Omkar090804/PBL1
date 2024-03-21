@@ -1,0 +1,54 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFBB5C;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #FF9B50;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #fff;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.container {
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 50px auto;
+    max-width: 400px;
+}
+
+select, button {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #E25E3E;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background-color: #E25E3E;
+    color: #fff;
+}
+
+input[type="submit"]:hover {
+    background-color: #C63D2F;
+}
